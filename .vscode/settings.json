@@ -1,0 +1,7 @@
+{
+    "[typst]": {
+        "editor.formatOnSave": true
+    },
+    "tinymist.exportPdf": "onSave",
+    "tinymist.outputPath": "$root/build/$name"
+}

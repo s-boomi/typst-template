@@ -1,0 +1,18 @@
+[tools]
+"cargo:typst-cli" = "latest"
+
+[hooks]
+enter = "mise install --quiet"
+
+[tasks.compile-pdf]
+description = "Compile Typst file into PDF"
+run = ''' 
+typst compile ./src/main.typ ./build/main.pdf
+'''
+
+[tasks.watch]
+description = "Compiles and takes account of changes"
+run = '''
+typst watch ./src/main.typ
+'''
+
