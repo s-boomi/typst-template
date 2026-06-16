@@ -1,0 +1,17 @@
+.mise-cache: &mise-cache
+  key:
+    prefix: mise-
+    files: ["mise.toml", "./bin/mise"]
+  paths:
+    - .mise/installs
+    - .mise/mise-2026.6.10
+
+build-job:
+  stage: build
+  image: debian:bookworm # Use the image you created
+  cache:
+    - <<: *mise-cache
+      policy: pull-push
+  script:
+    - ./bin/mise install
+    - ./bin/mise exec --command 'npm build'

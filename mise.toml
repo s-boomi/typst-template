@@ -7,12 +7,14 @@ enter = "mise install --quiet"
 [tasks.compile-pdf]
 description = "Compile Typst file into PDF"
 run = ''' 
+mkdir -p build
 typst compile ./src/main.typ ./build/main.pdf
 '''
 
 [tasks.watch]
 description = "Compiles and takes account of changes"
 run = '''
+mkdir -p build
 typst watch ./src/main.typ
 '''
 
