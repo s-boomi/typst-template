@@ -1,5 +1,6 @@
 [tools]
 "cargo:typst-cli" = "latest"
+rust = "latest"
 
 [hooks]
 enter = "mise install --quiet"

@@ -3,5 +3,12 @@
         "editor.formatOnSave": true
     },
     "tinymist.exportPdf": "onSave",
-    "tinymist.outputPath": "$root/build/$name"
+    "tinymist.outputPath": "$root/build/$name",
+    "cSpell.language": "en,fr",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 85,
+    "cSpell.words": [
+        "BOOMI",
+        "Shadi",
+    ]
 }

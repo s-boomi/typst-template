@@ -3,3 +3,7 @@
 [[tools."cargo:typst-cli"]]
 version = "0.14.2"
 backend = "cargo:typst-cli"
+
+[[tools.rust]]
+version = "1.96.0"
+backend = "core:rust"

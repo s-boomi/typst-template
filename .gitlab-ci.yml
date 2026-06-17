@@ -8,10 +8,18 @@
 
 build-job:
   stage: build
-  image: debian:bookworm # Use the image you created
+  image: debian:12-slim # Use the image you created
+  before_script:
+    - apt-get update 
+    - apt-get -y --no-install-recommends install sudo curl git ca-certificates build-essential pkg-config libssl-dev
+    - rm -rf /var/lib/apt/lists/*
   cache:
     - <<: *mise-cache
       policy: pull-push
   script:
     - ./bin/mise install
-    - ./bin/mise exec --command 'npm build'
+    - ./bin/mise run compile-pdf
+  artifacts:
+    paths:
+      - ./build/main.pdf
+    # expire_in: 30 days 
